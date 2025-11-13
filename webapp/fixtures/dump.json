@@ -1,0 +1,134 @@
+[
+{
+  "model": "webapp.task",
+  "pk": 1,
+  "fields": {
+    "title": "Задача 1",
+    "description": "Текст текст",
+    "status": 1,
+    "type": 1,
+    "created_at": "2025-11-13T07:42:53.324Z",
+    "updated_at": "2025-11-13T07:42:53.324Z"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 2,
+  "fields": {
+    "title": "Задача 2",
+    "description": "Текст текст",
+    "status": 2,
+    "type": 1,
+    "created_at": "2025-11-13T07:43:22.949Z",
+    "updated_at": "2025-11-13T07:43:22.949Z"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 3,
+  "fields": {
+    "title": "Задача 3",
+    "description": "Текст текст",
+    "status": 3,
+    "type": 1,
+    "created_at": "2025-11-13T07:43:48.964Z",
+    "updated_at": "2025-11-13T07:43:48.964Z"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 4,
+  "fields": {
+    "title": "Ошибка 1",
+    "description": "Текст текст",
+    "status": 2,
+    "type": 2,
+    "created_at": "2025-11-13T07:44:06.832Z",
+    "updated_at": "2025-11-13T07:44:46.415Z"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 5,
+  "fields": {
+    "title": "Улучшение 1",
+    "description": "Текст текст",
+    "status": 2,
+    "type": 3,
+    "created_at": "2025-11-13T07:44:34.619Z",
+    "updated_at": "2025-11-13T07:44:56.942Z"
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 6,
+  "fields": {
+    "title": "Ошибка 2",
+    "description": "Текст текст",
+    "status": 1,
+    "type": 2,
+    "created_at": "2025-11-13T07:45:30.398Z",
+    "updated_at": "2025-11-13T07:45:30.398Z"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 1,
+  "fields": {
+    "name": "Новый"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 2,
+  "fields": {
+    "name": "В процессе"
+  }
+},
+{
+  "model": "webapp.status",
+  "pk": 3,
+  "fields": {
+    "name": "Выполнено"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 1,
+  "fields": {
+    "name": "Задача"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 2,
+  "fields": {
+    "name": "Ошибка"
+  }
+},
+{
+  "model": "webapp.type",
+  "pk": 3,
+  "fields": {
+    "name": "Улучшение"
+  }
+},
+{
+  "model": "auth.user",
+  "pk": 1,
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$HQC4gUDx3roVvey6n6sYcZ$amsCAg05PTF5REU4zd4bJCYNlCkv7GfdsHtwJnRRc/0=",
+    "last_login": "2025-11-13T07:26:55.501Z",
+    "is_superuser": true,
+    "username": "admin",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-11-13T07:26:15.990Z",
+    "groups": [],
+    "user_permissions": []
+  }
+}
+]
