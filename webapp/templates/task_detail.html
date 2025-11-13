@@ -15,6 +15,7 @@
         <p class="card-text"><strong>Статус:</strong> {{ task.status }}</p>
         <p class="card-text"><strong>Тип:</strong> {{ task.type }}</p>
         <a href="{% url 'task_update' pk=task.id %}" class="btn btn-outline-primary btn-sm">Изменить задачу</a>
+        <a href="{% url 'task_delete' pk=task.id %}" class="btn btn-outline-primary btn-sm">Удалить задачу</a>
       </div>
 </div>
 {% endblock %}

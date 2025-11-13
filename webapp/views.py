@@ -24,6 +24,7 @@ class TaskDetailView(TemplateView):
 
 
 class TaskCreateView(View):
+
     def get(self, request, *args, **kwargs):
         form = TaskForm()
         return render(request, 'task_add.html', {'form': form})
@@ -50,3 +51,15 @@ class TaskUpdateView(View):
         if form.is_valid():
             task = form.save()
             return redirect('task_detail', pk=task.id)
+
+
+class TaskDeleteView(View):
+
+    def get(self, request, *args, pk,**kwargs):
+        task = get_object_or_404(Task, pk=pk)
+        return render(request, 'task_delete.html', {'task': task})
+
+    def post(self, request, *args, pk, **kwargs):
+        task = get_object_or_404(Task, pk=pk)
+        task.delete()
+        return redirect('task_list')
