@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title %}Task {{ task.id }}{% endblock %}
+
+{% block content %}
+    <div class="card">
+      <div class="card-body">
+        <h5 class="card-title">Задача: {{ task.title }}</h5>
+
+        {% if task.description %}
+            <p class="card-text"><strong>Описание:</strong> <br>{{ task.description }}</p>
+        {% else %}
+            <p class="card-text">Без описания</p>
+        {% endif %}
+        <p class="card-text"><strong>Статус:</strong> {{ task.status }}</p>
+        <p class="card-text"><strong>Тип:</strong> {{ task.type }}</p>
+      </div>
+</div>
+{% endblock %}

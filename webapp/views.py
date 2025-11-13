@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.views.generic import TemplateView
 
 from webapp.models import Task
@@ -12,8 +12,11 @@ class TaskListView(TemplateView):
         context['tasks'] = Task.objects.all()
         return context
 
-def task_list_view(request):
-    tasks = Task.objects.all()
-    return render(request, 'task_list.html', {
-        'tasks': tasks
-    })
+
+class TaskDetailView(TemplateView):
+    template_name = 'task_detail.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['task'] = get_object_or_404(Task, pk=self.kwargs.get('pk'))
+        return context
