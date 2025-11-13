@@ -35,3 +35,18 @@ class TaskCreateView(View):
             return redirect('task_detail', pk=task.id)
         else:
             return render(request, 'task_add.html', context={'form': form})
+
+
+class TaskUpdateView(View):
+
+    def get(self, request, *args, pk,**kwargs):
+        task = get_object_or_404(Task, pk=pk)
+        form = TaskForm(instance=task)
+        return render(request, 'task_update.html', {'form': form})
+
+    def post(self, request, *args, pk, **kwargs):
+        task = get_object_or_404(Task, pk=pk)
+        form = TaskForm(request.POST, instance=task)
+        if form.is_valid():
+            task = form.save()
+            return redirect('task_detail', pk=task.id)
