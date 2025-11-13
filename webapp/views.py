@@ -1,6 +1,7 @@
-from django.shortcuts import render, get_object_or_404
-from django.views.generic import TemplateView
+from django.shortcuts import render, get_object_or_404, redirect
+from django.views.generic import TemplateView, View
 
+from webapp.forms import TaskForm
 from webapp.models import Task
 
 
@@ -20,3 +21,17 @@ class TaskDetailView(TemplateView):
         context = super().get_context_data(**kwargs)
         context['task'] = get_object_or_404(Task, pk=self.kwargs.get('pk'))
         return context
+
+
+class TaskCreateView(View):
+    def get(self, request, *args, **kwargs):
+        form = TaskForm()
+        return render(request, 'task_add.html', {'form': form})
+
+    def post(self, request, *args, **kwargs):
+        form = TaskForm(request.POST)
+        if form.is_valid():
+            task = form.save()
+            return redirect('task_detail', pk=task.id)
+        else:
+            return render(request, 'task_add.html', context={'form': form})
