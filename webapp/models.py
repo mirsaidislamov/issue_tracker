@@ -4,8 +4,9 @@ from django.db import models
 class Task(models.Model):
     title = models.CharField(max_length=100, verbose_name='Заголовок')
     description = models.TextField(verbose_name='Описание', blank=True, null=True)
-    status = models.ForeignKey('webapp.Status', on_delete=models.RESTRICT, verbose_name='Статус', related_name='tasks')
-    type = models.ForeignKey('webapp.Type', on_delete=models.RESTRICT, verbose_name='Тип', related_name='tasks')
+    status = models.ForeignKey('webapp.Status', on_delete=models.RESTRICT, verbose_name='Статус', related_name='tasks', blank=True, null=True)
+    types = models.ManyToManyField('webapp.Type', related_name='tasks', verbose_name='Типы', blank=True)
+    type = models.ForeignKey('webapp.Type', on_delete=models.RESTRICT, verbose_name='Тип', related_name='tasks_old')
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Дата создания')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Дата обновления')
 

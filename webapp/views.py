@@ -59,7 +59,7 @@ class TaskDeleteView(View):
         task = get_object_or_404(Task, pk=pk)
         return render(request, 'task_delete.html', {'task': task})
 
-    def post(self, request, *args, pk, **kwargs):
+    def post(self, request, *args, pk,**kwargs):
         task = get_object_or_404(Task, pk=pk)
         task.delete()
         return redirect('task_list')
