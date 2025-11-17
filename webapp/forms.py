@@ -9,10 +9,12 @@ class TaskForm(forms.ModelForm):
         model = Task
         status = forms.ModelChoiceField(queryset=Status.objects.all(), label='Статус', required=True)
         types = forms.ModelMultipleChoiceField(queryset=Type.objects.all(), label='Тип', required=True)
-        fields = ['title', 'description', 'status', 'type']
+        fields = ['title', 'description', 'status', 'types']
         widgets = {
             'title': forms.TextInput(attrs={'class': 'form-control'}),
             'description': forms.Textarea(attrs={'class': 'form-control'}),
+            'status': forms.Select(attrs={'class': 'form-select'}),
+            'types': forms.CheckboxSelectMultiple(),
         }
 
     def clean_title(self):
