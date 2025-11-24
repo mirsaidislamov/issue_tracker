@@ -10,8 +10,14 @@
                 <div class="card h-100">
                     <div class="card-body">
                         <h5 class="card-title">{{ task.title }}</h5>
-                        <p class="card-text">Статус: {{ task.status }}</p>
-                        <p class="card-text">Тип: {{ task.type }}</p>
+                        <p class="card-text"><strong>Статус: </strong>{{ task.status }}</p>
+                        <p class="card-text"><strong>Тип: </strong>
+                            {% for type in task.types.all %}
+                                <span class="card-text">{{ type }}</span>
+                            {% empty %}
+                                <span class="card-text">—</span>
+                            {% endfor %}
+                        </p>
                         <a href="{% url 'task_detail' pk=task.id %}" class="btn btn-primary btn-sm">Подробнее...</a>
                     </div>
                 </div>

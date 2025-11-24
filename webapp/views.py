@@ -35,7 +35,7 @@ class TaskCreateView(View):
             task = form.save()
             return redirect('task_detail', pk=task.id)
         else:
-            return render(request, 'task_add.html', context={'form': form})
+            return render(request, 'task_add.html', {'form': form})
 
 
 class TaskUpdateView(View):
@@ -51,6 +51,7 @@ class TaskUpdateView(View):
         if form.is_valid():
             task = form.save()
             return redirect('task_detail', pk=task.id)
+        return render(request, 'task_update.html', {'form': form, 'task': task})
 
 
 class TaskDeleteView(View):
