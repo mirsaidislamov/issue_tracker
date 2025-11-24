@@ -6,7 +6,7 @@ from webapp.models import Task
 
 
 class TaskListView(TemplateView):
-    template_name = 'task_list.html'
+    template_name = 'task/task_list.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -15,7 +15,7 @@ class TaskListView(TemplateView):
 
 
 class TaskDetailView(TemplateView):
-    template_name = 'task_detail.html'
+    template_name = 'task/task_detail.html'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -27,7 +27,7 @@ class TaskCreateView(View):
 
     def get(self, request, *args, **kwargs):
         form = TaskForm()
-        return render(request, 'task_add.html', {'form': form})
+        return render(request, 'task/task_add.html', {'form': form})
 
     def post(self, request, *args, **kwargs):
         form = TaskForm(request.POST)
@@ -35,7 +35,7 @@ class TaskCreateView(View):
             task = form.save()
             return redirect('task_detail', pk=task.id)
         else:
-            return render(request, 'task_add.html', {'form': form})
+            return render(request, 'task/task_add.html', {'form': form})
 
 
 class TaskUpdateView(View):
@@ -43,7 +43,7 @@ class TaskUpdateView(View):
     def get(self, request, *args, pk,**kwargs):
         task = get_object_or_404(Task, pk=pk)
         form = TaskForm(instance=task)
-        return render(request, 'task_update.html', {'form': form})
+        return render(request, 'task/task_update.html', {'form': form})
 
     def post(self, request, *args, pk, **kwargs):
         task = get_object_or_404(Task, pk=pk)
@@ -51,14 +51,14 @@ class TaskUpdateView(View):
         if form.is_valid():
             task = form.save()
             return redirect('task_detail', pk=task.id)
-        return render(request, 'task_update.html', {'form': form, 'task': task})
+        return render(request, 'task/task_update.html', {'form': form, 'task': task})
 
 
 class TaskDeleteView(View):
 
     def get(self, request, *args, pk,**kwargs):
         task = get_object_or_404(Task, pk=pk)
-        return render(request, 'task_delete.html', {'task': task})
+        return render(request, 'task/task_delete.html', {'task': task})
 
     def post(self, request, *args, pk,**kwargs):
         task = get_object_or_404(Task, pk=pk)
