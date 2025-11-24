@@ -1,0 +1,8 @@
+from django.db import models
+
+
+class Type(models.Model):
+    name = models.CharField(max_length=100, verbose_name='Название', unique=True)
+
+    def __str__(self):
+        return self.name
