@@ -1,5 +1,5 @@
 from django.utils.http import urlencode
-from django.views.generic import ListView, DetailView, CreateView
+from django.views.generic import ListView, DetailView, CreateView, UpdateView
 from django.db.models import Q
 from django.shortcuts import reverse
 
@@ -57,3 +57,9 @@ class ProjectDetailView(DetailView):
 class ProjectCreateView(CreateView):
     template_name = 'project/project_create.html'
     form_class = ProjectForm
+
+
+class ProjectUpdateView(UpdateView):
+    template_name = 'project/project_update.html'
+    form_class = ProjectForm
+    model = Project

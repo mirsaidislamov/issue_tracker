@@ -18,7 +18,7 @@
         {% else %}
             <p class="card-text">Сроки проекта не указаны</p>
         {% endif %}
-        <a href="#" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
+        <a href="{% url 'project_update' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
         <a href="#" class="btn btn-outline-light btn-sm mb-2">Удалить проект</a>
       </div>
     </div>
