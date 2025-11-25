@@ -1,5 +1,5 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse
 
 from webapp.forms import TaskForm
@@ -15,12 +15,12 @@ class TaskListView(TemplateView):
         return context
 
 
-class TaskDetailView(TemplateView):
+class TaskDetailView(DetailView):
     template_name = 'task/task_detail.html'
+    model = Task
 
     def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['task'] = get_object_or_404(Task, pk=self.kwargs.get('pk'))
+        context = super(TaskDetailView, self).get_context_data(**kwargs)
         return context
 
 
