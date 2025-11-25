@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %}Project {{ project.id }}{% endblock %}
+
+{% block content %}
+    <div class="card text-bg-primary mb-3">
+      <div class="card-body">
+        <h5 class="card-title">Проект: {{ project.name }}</h5>
+
+        {% if project.description %}
+            <p class="card-text"><strong>Описание:</strong> <br>{{ project.description }}</p>
+        {% else %}
+            <p class="card-text">Без описания</p>
+        {% endif %}
+        <p class="card-text">Дата начала проекта: {{ project.start_date}}</p>
+        {% if project.end_date %}
+            <p class="card-text">Дата окончания проекта: {{ project.end_date }}</p>
+        {% else %}
+            <p class="card-text">Сроки проекта не указаны</p>
+        {% endif %}
+        <a href="#" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
+        <a href="#" class="btn btn-outline-light btn-sm mb-2">Удалить проект</a>
+      </div>
+    </div>
+
+    <h4 class="mb-3">Задачи</h4>
+    <div class="row row-cols row-cols-md-4">
+        {% for task in tasks %}
+            <div class="col mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ task.title }}</h5>
+                        <p class="card-text"><strong>Статус: </strong>{{ task.status }}</p>
+                        <p class="card-text"><strong>Тип: </strong>
+                            {% for type in task.types.all %}
+                                <span class="card-text">{{ type }}</span>
+                            {% empty %}
+                                <span class="card-text">—</span>
+                            {% endfor %}
+                        </p>
+                        <a href="{% url 'task_detail' pk=task.id %}" class="btn btn-primary btn-sm">Подробнее...</a>
+                    </div>
+                </div>
+            </div>
+        {% empty %}
+            <p>Задач нет.</p>
+        {% endfor %}
+    </div>
+
+
+{% endblock %}
