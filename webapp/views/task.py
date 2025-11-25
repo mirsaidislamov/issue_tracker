@@ -1,5 +1,5 @@
-from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import TemplateView, View, CreateView, UpdateView
+from django.shortcuts import get_object_or_404
+from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView
 from django.urls import reverse
 
 from webapp.forms import TaskForm
@@ -46,13 +46,9 @@ class TaskUpdateView(UpdateView):
         return reverse('project_detail', kwargs={'pk': self.object.project.pk})
 
 
-class TaskDeleteView(View):
+class TaskDeleteView(DeleteView):
+    template_name = 'task/task_delete.html'
+    model = Task
 
-    def get(self, request, *args, pk,**kwargs):
-        task = get_object_or_404(Task, pk=pk)
-        return render(request, 'task/task_delete.html', {'task': task})
-
-    def post(self, request, *args, pk,**kwargs):
-        task = get_object_or_404(Task, pk=pk)
-        task.delete()
-        return redirect('project_list')
+    def get_success_url(self):
+        return reverse('project_detail', kwargs={'pk': self.object.project.pk})
