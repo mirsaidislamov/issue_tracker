@@ -1,8 +1,10 @@
 from django.utils.http import urlencode
-from django.views.generic import ListView, DetailView
+from django.views.generic import ListView, DetailView, CreateView
 from django.db.models import Q
+from django.shortcuts import reverse
 
 from webapp.forms import SearchForm
+from webapp.forms.project import ProjectForm
 from webapp.models import Project
 
 
@@ -50,3 +52,8 @@ class ProjectDetailView(DetailView):
         project = self.object
         context['tasks'] = project.tasks.all()
         return context
+
+
+class ProjectCreateView(CreateView):
+    template_name = 'project/project_create.html'
+    form_class = ProjectForm
