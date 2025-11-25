@@ -1,8 +1,9 @@
 from django.shortcuts import render, get_object_or_404, redirect
-from django.views.generic import TemplateView, View
+from django.views.generic import TemplateView, View, CreateView
+from django.urls import reverse
 
 from webapp.forms import TaskForm
-from webapp.models import Task
+from webapp.models import Task, Project
 
 
 class TaskListView(TemplateView):
@@ -23,19 +24,17 @@ class TaskDetailView(TemplateView):
         return context
 
 
-class TaskCreateView(View):
+class TaskCreateView(CreateView):
+    template_name = 'task/task_add.html'
+    form_class = TaskForm
 
-    def get(self, request, *args, **kwargs):
-        form = TaskForm()
-        return render(request, 'task/task_add.html', {'form': form})
+    def get_success_url(self):
+        return reverse('project_detail', kwargs={'pk': self.object.project.pk})
 
-    def post(self, request, *args, **kwargs):
-        form = TaskForm(request.POST)
-        if form.is_valid():
-            task = form.save()
-            return redirect('task_detail', pk=task.id)
-        else:
-            return render(request, 'task/task_add.html', {'form': form})
+    def form_valid(self, form):
+        project = get_object_or_404(Project, pk=self.kwargs.get('pk'))
+        form.instance.project = project
+        return super().form_valid(form)
 
 
 class TaskUpdateView(View):

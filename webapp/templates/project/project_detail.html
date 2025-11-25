@@ -20,6 +20,7 @@
         {% endif %}
         <a href="{% url 'project_update' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
         <a href="{% url 'project_delete' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Удалить проект</a>
+        <a href="{% url 'task_create' project.id %}" class="btn btn-outline-light btn-sm mb-2">Добавить задачу</a>
       </div>
     </div>
 
