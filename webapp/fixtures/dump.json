@@ -10,6 +10,76 @@
   }
 },
 {
+  "model": "webapp.project",
+  "pk": 2,
+  "fields": {
+    "start_date": "2025-11-03",
+    "end_date": "2026-04-17",
+    "name": "Проект 2",
+    "description": "Простое описание 2"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 3,
+  "fields": {
+    "start_date": "2025-11-03",
+    "end_date": "2025-11-28",
+    "name": "Проект 3",
+    "description": ""
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 4,
+  "fields": {
+    "start_date": "2025-11-02",
+    "end_date": "2026-07-17",
+    "name": "Проект 4",
+    "description": "лоилоилилотлоиьттл"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 5,
+  "fields": {
+    "start_date": "2025-11-12",
+    "end_date": null,
+    "name": "Проект 5",
+    "description": "мфмымымымымымымы"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 6,
+  "fields": {
+    "start_date": "2025-11-10",
+    "end_date": null,
+    "name": "Проект 6",
+    "description": "вивяиявыиявтявития яв"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 7,
+  "fields": {
+    "start_date": "2025-11-02",
+    "end_date": null,
+    "name": "Новый проект",
+    "description": "New"
+  }
+},
+{
+  "model": "webapp.project",
+  "pk": 8,
+  "fields": {
+    "start_date": "2025-11-26",
+    "end_date": "2025-11-30",
+    "name": "смвымвым",
+    "description": "ыфмыфмы"
+  }
+},
+{
   "model": "webapp.task",
   "pk": 1,
   "fields": {
@@ -149,13 +219,88 @@
   "pk": 14,
   "fields": {
     "created_at": "2025-11-23T13:17:02.970Z",
-    "updated_at": "2025-11-23T13:17:02.970Z",
+    "updated_at": "2025-11-24T11:20:18.019Z",
     "title": "df d",
     "description": null,
-    "status": 1,
+    "status": 2,
     "project": 1,
     "types": [
       1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 16,
+  "fields": {
+    "created_at": "2025-11-25T18:02:06.362Z",
+    "updated_at": "2025-11-25T18:02:06.362Z",
+    "title": "dvsvs",
+    "description": null,
+    "status": 1,
+    "project": null,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 17,
+  "fields": {
+    "created_at": "2025-11-25T18:11:20.852Z",
+    "updated_at": "2025-11-25T18:11:20.852Z",
+    "title": "cwvwv",
+    "description": null,
+    "status": 1,
+    "project": 2,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 18,
+  "fields": {
+    "created_at": "2025-11-25T18:11:28.760Z",
+    "updated_at": "2025-11-25T18:11:28.760Z",
+    "title": "gege",
+    "description": null,
+    "status": 2,
+    "project": 2,
+    "types": [
+      3
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 19,
+  "fields": {
+    "created_at": "2025-11-25T18:11:38.436Z",
+    "updated_at": "2025-11-25T18:11:38.436Z",
+    "title": "fwefwf",
+    "description": null,
+    "status": 1,
+    "project": 2,
+    "types": [
+      1
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 20,
+  "fields": {
+    "created_at": "2025-11-25T18:11:48.956Z",
+    "updated_at": "2025-11-25T18:11:48.956Z",
+    "title": "fwfwfw",
+    "description": null,
+    "status": 1,
+    "project": 4,
+    "types": [
+      3
     ]
   }
 },

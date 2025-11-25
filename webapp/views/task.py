@@ -1,18 +1,9 @@
 from django.shortcuts import get_object_or_404
-from django.views.generic import TemplateView, CreateView, UpdateView, DeleteView, DetailView
+from django.views.generic import CreateView, UpdateView, DeleteView, DetailView
 from django.urls import reverse
 
 from webapp.forms import TaskForm
 from webapp.models import Task, Project
-
-
-class TaskListView(TemplateView):
-    template_name = 'task/task_list.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-        context['tasks'] = Task.objects.all()
-        return context
 
 
 class TaskDetailView(DetailView):
