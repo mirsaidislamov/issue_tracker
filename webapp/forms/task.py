@@ -37,3 +37,4 @@ class TaskForm(forms.ModelForm):
 
             if description and len(description) < 10:
                 raise ValidationError('Описание слишком короткое — минимум 10 символов.')
+            return description
