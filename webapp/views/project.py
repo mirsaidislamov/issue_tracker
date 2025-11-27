@@ -1,7 +1,9 @@
+from django.shortcuts import redirect
 from django.urls import reverse_lazy
 from django.utils.http import urlencode
 from django.views.generic import ListView, DetailView, CreateView, UpdateView, DeleteView
 from django.db.models import Q
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 from webapp.forms import SearchForm
 from webapp.forms.project import ProjectForm
@@ -54,18 +56,18 @@ class ProjectDetailView(DetailView):
         return context
 
 
-class ProjectCreateView(CreateView):
+class ProjectCreateView(LoginRequiredMixin, CreateView):
     template_name = 'project/project_create.html'
     form_class = ProjectForm
 
 
-class ProjectUpdateView(UpdateView):
+class ProjectUpdateView(LoginRequiredMixin, UpdateView):
     template_name = 'project/project_update.html'
     form_class = ProjectForm
     model = Project
 
 
-class ProjectDeleteView(DeleteView):
+class ProjectDeleteView(LoginRequiredMixin, DeleteView):
     template_name = 'project/project_delete.html'
     model = Project
     success_url = reverse_lazy('webapp:project_list')

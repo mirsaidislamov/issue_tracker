@@ -18,9 +18,11 @@
         {% else %}
             <p class="card-text">Сроки проекта не указаны</p>
         {% endif %}
-        <a href="{% url 'webapp:project_update' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
-        <a href="{% url 'webapp:project_delete' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Удалить проект</a>
-        <a href="{% url 'webapp:task_create' project.id %}" class="btn btn-outline-light btn-sm mb-2">Добавить задачу</a>
+        {% if user.is_authenticated %}
+            <a href="{% url 'webapp:project_update' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Изменить проект</a>
+            <a href="{% url 'webapp:project_delete' pk=project.id %}" class="btn btn-outline-light btn-sm mb-2">Удалить проект</a>
+            <a href="{% url 'webapp:task_create' project.id %}" class="btn btn-outline-light btn-sm mb-2">Добавить задачу</a>
+        {% endif %}
       </div>
     </div>
 
@@ -40,8 +42,10 @@
                             {% endfor %}
                         </p>
                         <a href="{% url 'webapp:task_detail' pk=task.id %}" class="btn btn-primary btn-sm mb-2">Подробнее...</a>
-                        <a href="{% url 'webapp:task_update' pk=task.id %}" class="btn btn-primary btn-sm mb-2">Изменить задачу</a>
-                        <a href="{% url 'webapp:task_delete' pk=task.id %}" class="btn btn-primary btn-sm">Удалить задачу</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'webapp:task_update' pk=task.id %}" class="btn btn-primary btn-sm mb-2">Изменить задачу</a>
+                            <a href="{% url 'webapp:task_delete' pk=task.id %}" class="btn btn-primary btn-sm mb-2">Удалить задачу</a>
+                        {% endif %}
                     </div>
                 </div>
             </div>

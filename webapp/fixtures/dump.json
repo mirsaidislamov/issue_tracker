@@ -6,7 +6,7 @@
     "start_date": "2025-11-24",
     "end_date": null,
     "name": "Проект 1",
-    "description": ""
+    "description": "мывмымы"
   }
 },
 {
@@ -36,7 +36,7 @@
     "start_date": "2025-11-02",
     "end_date": "2026-07-17",
     "name": "Проект 4",
-    "description": "лоилоилилотлоиьттл"
+    "description": "лоилоилилотлоиьтт"
   }
 },
 {
@@ -44,7 +44,7 @@
   "pk": 5,
   "fields": {
     "start_date": "2025-11-12",
-    "end_date": null,
+    "end_date": "2025-11-27",
     "name": "Проект 5",
     "description": "мфмымымымымымымы"
   }
@@ -84,9 +84,9 @@
   "pk": 1,
   "fields": {
     "created_at": "2025-11-13T07:42:53.324Z",
-    "updated_at": "2025-11-24T10:44:58.644Z",
+    "updated_at": "2025-11-26T10:41:33.173Z",
     "title": "Задача 1",
-    "description": null,
+    "description": "ымымывмыммымы",
     "status": 1,
     "project": 1,
     "types": [
@@ -99,9 +99,9 @@
   "pk": 2,
   "fields": {
     "created_at": "2025-11-13T07:43:22.949Z",
-    "updated_at": "2025-11-13T07:43:22.949Z",
+    "updated_at": "2025-11-26T10:20:56.173Z",
     "title": "Задача 2",
-    "description": "Текст текст",
+    "description": null,
     "status": 2,
     "project": 1,
     "types": [
@@ -129,9 +129,9 @@
   "pk": 4,
   "fields": {
     "created_at": "2025-11-13T07:44:06.832Z",
-    "updated_at": "2025-11-13T07:44:46.415Z",
+    "updated_at": "2025-11-26T10:22:53.563Z",
     "title": "Ошибка 1",
-    "description": "Текст текст",
+    "description": null,
     "status": 2,
     "project": 1,
     "types": [
@@ -249,9 +249,9 @@
   "pk": 17,
   "fields": {
     "created_at": "2025-11-25T18:11:20.852Z",
-    "updated_at": "2025-11-25T18:11:20.852Z",
+    "updated_at": "2025-11-27T06:35:00.714Z",
     "title": "cwvwv",
-    "description": null,
+    "description": "ds s s s s s s s",
     "status": 1,
     "project": 2,
     "types": [
@@ -305,6 +305,36 @@
   }
 },
 {
+  "model": "webapp.task",
+  "pk": 22,
+  "fields": {
+    "created_at": "2025-11-26T10:17:53.536Z",
+    "updated_at": "2025-11-26T10:17:59.219Z",
+    "title": "csacaca",
+    "description": null,
+    "status": 2,
+    "project": 4,
+    "types": [
+      2
+    ]
+  }
+},
+{
+  "model": "webapp.task",
+  "pk": 23,
+  "fields": {
+    "created_at": "2025-11-27T05:58:51.796Z",
+    "updated_at": "2025-11-27T05:58:51.796Z",
+    "title": "vdbdfbdb",
+    "description": "dbdfbdbdbdbdbdbb",
+    "status": 2,
+    "project": 2,
+    "types": [
+      3
+    ]
+  }
+},
+{
   "model": "webapp.status",
   "pk": 1,
   "fields": {
@@ -351,7 +381,7 @@
   "pk": 1,
   "fields": {
     "password": "pbkdf2_sha256$1000000$HQC4gUDx3roVvey6n6sYcZ$amsCAg05PTF5REU4zd4bJCYNlCkv7GfdsHtwJnRRc/0=",
-    "last_login": "2025-11-13T07:26:55.501Z",
+    "last_login": "2025-11-27T06:34:50.403Z",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",

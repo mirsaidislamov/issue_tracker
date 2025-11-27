@@ -16,7 +16,9 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
+          {% if user.is_authenticated %}
             <a class="nav-link active" aria-current="page" href="{% url 'webapp:project_create' %}">Добавить проект</a>
+          {% endif %}
             {% if request.user.is_authenticated %}
                 <form method="POST" action="{% url 'accounts:logout' %}">
                     {% csrf_token %}
